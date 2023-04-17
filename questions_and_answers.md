@@ -61,7 +61,7 @@ ORDER BY revenue DESC;
      
 ---
  
-***What were the best and worst selling brands in term of number of transaction?**
+**What were the best and worst selling brands in term of number of transaction?**
 ```sql
 SELECT p.brand, COUNT(t.trans_id) AS number_of_trans
 FROM transactions AS t
