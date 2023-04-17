@@ -21,7 +21,7 @@
 
 ## Questions and Answers
 
-**What were the total revenue for each month in the first half?**
+**What was the total revenue for each month in the first half?**
 ```sql
 SELECT strftime('%m', trans_dt) as month, SUM(item_price*item_qty) AS total_revenue
 FROM transactions
