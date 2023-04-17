@@ -105,8 +105,7 @@ FROM transactions AS t
 LEFT JOIN products AS p
 ON t.prod_id = p.prod_id
 GROUP BY p.brand
-ORDER BY total_revenue DESC
-LIMIT 10;
+ORDER BY total_revenue DESC;
 ```
 
 **Results:**
