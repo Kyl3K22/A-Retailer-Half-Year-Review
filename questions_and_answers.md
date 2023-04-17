@@ -38,7 +38,7 @@ GROUP BY month;
 | 05	| 8219.07999999997 |
 | 06	| 4337.52999999999 |
 
-      
+---
       
 **What was the best selling category in the first half?**
 ```sql
@@ -59,7 +59,8 @@ ORDER BY revenue DESC;
 |Accessoires|	1756.86|
 |Sun|	1268.74|
      
-     
+---
+ 
 ***What were the best and worst selling brands in term of number of transaction?**
 ```sql
 SELECT p.brand, COUNT(t.trans_id) AS number_of_trans
@@ -95,7 +96,8 @@ ORDER BY number_of_trans DESC;
 |Z|	10|
 |V|	8|
    
-   
+---
+
 **What were the best and worst selling brands in term of total revenue?**
 ```sql
 SELECT p.brand, SUM(t.item_price*t.item_qty) AS total_revenue
@@ -133,7 +135,8 @@ LIMIT 10;
 |R	|486.58|
 |Z	|234.36|
     
-    
+---
+
 **Find the current active segment for 10 customers with the most recent segment update date:**
 ```sql
 SELECT s.cust_id, s.seg_name, s.update_at
@@ -163,8 +166,8 @@ LIMIT 10;
 |1287312|	LOYAL|	2016-06-01 00:00:00
 |1553648|	VIP|	2016-06-01 00:00:00
 
-    
-    
+---
+ 
 **Find the 10 best selling products in term of number of transactions between Jan 2016 and May 2016 (inclusive)**
 ```sql
 SELECT p.prod_id, p.prod_name, COUNT(DISTINCT t.trans_id) AS count
@@ -190,7 +193,7 @@ LIMIT 10;
 |138262091|	Product 138262091	|6
 |155174653|	Product 155174653	|6
 
-    
+---
     
 **Find the most popular category (by revenue) for each active segment**
 ```sql
@@ -215,7 +218,8 @@ GROUP BY seg_name;
 |ONE-OFFS|	Women|	10690.73
 |VIP|	Women|	29134.0700000003
      
-     
+---
+
 **Find the most recent segment of each customer as of 2016-03-01**
 ```sql
 SELECT cust_id, seg_name, MAX(update_at) as update_at
